@@ -8,6 +8,8 @@ const chalk = require("chalk");
 const boxen = require("boxen");
 const moment = require("moment");
 
+const { messageGreeting } = require("./greeting.js");
+
 dotenv.config();
 
 // const options = yargs
@@ -24,18 +26,7 @@ dotenv.config();
 //     type: "string",
 //   }).argv;
 
-const greeting = `Hello! You can view your tickets here!`;
-
-const boxenOptions = {
-  padding: 1,
-  margin: 1,
-  borderStyle: "round",
-  borderColor: "green",
-  backgroundColor: "#555555",
-};
-const msgBox = boxen(greeting, boxenOptions);
-
-console.log(msgBox);
+console.log(messageGreeting);
 
 var config = {
   method: "get",
