@@ -11,7 +11,7 @@ cd zendesk-coding-challenge-2021-terminal
 ```
 npm i
 ```
-4. The above command will install all the required npm packages for you. Once all the requirements are installed, you can run the program using the below command
+3. The above command will install all the required npm packages for you. Once all the requirements are installed, you can run the program using the below command
 ```
 node .
 ```
