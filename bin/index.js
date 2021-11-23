@@ -24,7 +24,7 @@ dotenv.config();
 //     type: "string",
 //   }).argv;
 
-const greeting = `Hello you can view your tickets here!`;
+const greeting = `Hello! You can view your tickets here!`;
 
 const boxenOptions = {
   padding: 1,
@@ -48,8 +48,15 @@ var config = {
 
 axios(config)
   .then(function (response) {
+    if (!response) {
+      return Promise.reject(
+        "The Zendesk API is currently unavailable, please check again later."
+      );
+    }
+
     console.log(`There are a totol of ${response.data.tickets.length} tickets`);
     let tickets = [];
+    // Ticket object to create each new individual ticket
     function Ticket(id, subject, description, date, status) {
       this.id = id;
       this.subject = subject;
@@ -71,7 +78,9 @@ axios(config)
       );
     });
     console.table(tickets);
-
+    return Promise.resolve(tickets);
+  })
+  .then((tickets) => {
     const readline = require("readline").createInterface({
       input: process.stdin,
       output: process.stdout,
