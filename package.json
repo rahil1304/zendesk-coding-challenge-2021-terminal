@@ -1,0 +1,29 @@
+{
+  "name": "zendesk-coding-challenge-2021-terminal",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bin/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "run": "./bin/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rahil1304/zendesk-coding-challenge-2021-terminal.git"
+  },
+  "author": "Rahil Sarvaiya",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/rahil1304/zendesk-coding-challenge-2021-terminal/issues"
+  },
+  "homepage": "https://github.com/rahil1304/zendesk-coding-challenge-2021-terminal#readme",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "boxen": "4.0",
+    "chalk": "2.4",
+    "dotenv": "^10.0.0",
+    "yargs": "13.2"
+  }
+}
