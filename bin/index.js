@@ -6,6 +6,7 @@ const dotenv = require("dotenv");
 const _ = require("underscore");
 const chalk = require("chalk");
 const boxen = require("boxen");
+const moment = require("moment");
 
 dotenv.config();
 
@@ -64,7 +65,7 @@ axios(config)
           ticket.id,
           ticket.subject,
           ticket.description.substring(0, 20),
-          ticket.created_at,
+          moment(ticket.created_at).format("DD MMM YYYY"),
           ticket.status
         )
       );
