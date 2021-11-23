@@ -3,6 +3,7 @@
 const yargs = require("yargs");
 const axios = require("axios");
 const dotenv = require("dotenv");
+const _ = require("underscore");
 dotenv.config();
 
 // const options = yargs
@@ -33,7 +34,24 @@ var config = {
 
 axios(config)
   .then(function (response) {
-    console.log(response.data.tickets);
+    console.log(`There are a totol of ${response.data.tickets.length} tickets`);
+    let tickets = [];
+    function Ticket(id, subject, description) {
+      this.id = id;
+      this.subject = subject;
+      this.description = description;
+    }
+
+    _.each(response.data.tickets, function (ticket) {
+      tickets.push(
+        new Ticket(
+          ticket.id,
+          ticket.subject,
+          ticket.description.substring(1, 20)
+        )
+      );
+    });
+    console.table(tickets);
   })
   .catch(function (error) {
     console.log(error);
