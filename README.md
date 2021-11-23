@@ -1,5 +1,10 @@
 # Zendesk Coding Challenge
 
+<!-- Change url to  ttps://img.shields.io/github/license/rahil1304/zendesk-coding-challenge-2021-terminal-->
+![GitHub](https://img.shields.io/github/license/rahil1304/cheaper)
+![Github](https://img.shields.io/badge/language-JavaScript-blue.svg)
+
+
 ## :rocket: Installation
 1. Clone the Github repository to a desired location on your computer. You will need [git](https://git-scm.com/) to be preinstalled on your machine. Once the repository is cloned, you will then ```cd``` into the local repository.
 ```
