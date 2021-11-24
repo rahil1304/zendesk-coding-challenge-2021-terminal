@@ -36,17 +36,48 @@ var config = {
     Cookie: process.env.COOKIE,
   },
 };
-
+let tickets = [];
 axios(config)
   .then(function (response) {
+    let paginationIndex = 0;
     if (!response) {
       return Promise.reject(
         "The Zendesk API is currently unavailable, please check again later."
       );
     }
 
-    console.log(`There are a totol of ${response.data.tickets.length} tickets`);
-    let tickets = [];
+    console.log(`There are a total of ${response.data.tickets.length} tickets`);
+    allTickets = response.data.tickets.slice(0, 25);
+    //     if (response.data.tickets.length >= 25) {
+    //       console.log(`Only 25 tickets can be displayed on the screen!`);
+    //       //   console.log(
+    //       //     "Please enter the page of the tickets you would like to visit"
+    //       //   );
+    //       const readline = require("readline").createInterface({
+    //         input: process.stdin,
+    //         output: process.stdout,
+    //       });
+
+    //       readline
+    //         .question(
+    //           `Please enter the page of the tickets you would like to visit:`,
+    //           (index) => {
+    //             paginationIndex = index;
+    //             console.log("Thank you for your input!");
+    //             readline.close();
+    //           }
+    //         )
+    //         .then((response) => {
+    //           console.log(response);
+    //         });
+    //     }
+    //     allTickets = response.data.tickets.slice(
+    //       paginationIndex,
+    //       paginationIndex + 25
+    //     );
+    //     return Promise.resolve(allTickets);
+    //   })
+    //   .then((allTickets) => {
     // Ticket object to create each new individual ticket
     function Ticket(id, subject, description, date, status) {
       this.id = id;
@@ -56,7 +87,7 @@ axios(config)
       this.status = status;
     }
 
-    _.each(response.data.tickets, function (ticket) {
+    _.each(allTickets, function (ticket) {
       //   console.log(ticket);
       tickets.push(
         new Ticket(
