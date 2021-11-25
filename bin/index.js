@@ -47,7 +47,6 @@ axios(config)
     }
 
     console.log(`There are a total of ${response.data.tickets.length} tickets`);
-    allTickets = response.data.tickets.slice(0, 25);
     if (response.data.tickets.length >= 25) {
       console.log(`Only 25 tickets can be displayed on the screen!`);
       //   console.log(
@@ -56,7 +55,7 @@ axios(config)
 
       const prompt = require("prompt-sync")();
 
-      const paginationIndex = prompt(
+      paginationIndex = prompt(
         "Please enter the page of the tickets you would like to visit: "
       );
       console.log(`You are now viewing ${paginationIndex}`);
@@ -76,8 +75,8 @@ axios(config)
       //     }
       //   );
     }
-
-    allTickets = response.data.tickets.slice(
+    allTickets = response.data.tickets;
+    allTickets = allTickets.slice(
       paginationIndex * 25,
       paginationIndex * 25 + 25
     );
