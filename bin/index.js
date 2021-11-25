@@ -48,36 +48,42 @@ axios(config)
 
     console.log(`There are a total of ${response.data.tickets.length} tickets`);
     allTickets = response.data.tickets.slice(0, 25);
-    //     if (response.data.tickets.length >= 25) {
-    //       console.log(`Only 25 tickets can be displayed on the screen!`);
-    //       //   console.log(
-    //       //     "Please enter the page of the tickets you would like to visit"
-    //       //   );
-    //       const readline = require("readline").createInterface({
-    //         input: process.stdin,
-    //         output: process.stdout,
-    //       });
+    if (response.data.tickets.length >= 25) {
+      console.log(`Only 25 tickets can be displayed on the screen!`);
+      //   console.log(
+      //     "Please enter the page of the tickets you would like to visit"
+      //   );
 
-    //       readline
-    //         .question(
-    //           `Please enter the page of the tickets you would like to visit:`,
-    //           (index) => {
-    //             paginationIndex = index;
-    //             console.log("Thank you for your input!");
-    //             readline.close();
-    //           }
-    //         )
-    //         .then((response) => {
-    //           console.log(response);
-    //         });
-    //     }
-    //     allTickets = response.data.tickets.slice(
-    //       paginationIndex,
-    //       paginationIndex + 25
-    //     );
-    //     return Promise.resolve(allTickets);
-    //   })
-    //   .then((allTickets) => {
+      const prompt = require("prompt-sync")();
+
+      const paginationIndex = prompt(
+        "Please enter the page of the tickets you would like to visit: "
+      );
+      console.log(`You are now viewing ${paginationIndex}`);
+
+      //   const readline = require("readline").createInterface({
+      //     input: process.stdin,
+      //     output: process.stdout,
+      //   });
+
+      //   readline.question(
+      //     `Please enter the page of the tickets you would like to visit:`,
+      //     (index) => {
+      //       paginationIndex = index;
+      //       inputEntered = true;
+      //       console.log("Thank you for your input!");
+      //       readline.close();
+      //     }
+      //   );
+    }
+
+    allTickets = response.data.tickets.slice(
+      paginationIndex * 25,
+      paginationIndex * 25 + 25
+    );
+    return Promise.resolve(allTickets);
+  })
+  .then((allTickets) => {
     // Ticket object to create each new individual ticket
     function Ticket(id, subject, description, date, status) {
       this.id = id;
