@@ -108,7 +108,9 @@ function getTicketsAPI(config, tickets) {
       console.log(`These are the details of Ticket ${id}!`);
       console.log(`Subject: ${allTickets[id - 1].subject}`);
       console.log(`Description: ${allTickets[id - 1].description}`);
-      console.log(`Date: ${allTickets[id - 1].date}`);
+      console.log(
+        `Date: ${moment(allTickets[id - 1].created_at).format("DD MMM YYYY")}`
+      );
       console.log(`Status: ${allTickets[id - 1].status}`);
       console.log(`<------------------------------------>`);
       return Promise.resolve();
