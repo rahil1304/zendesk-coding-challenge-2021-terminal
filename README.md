@@ -6,7 +6,7 @@
 
 ## :bulb: Working Implementation
 
-<p align="center"><img width="700" src="./assets/zendeskChallenge.gif"></p>
+<p align="center"><img width="700" src="./assets/zendeskChallenge2.gif"></p>
 
 ## :rocket: Installation
 1. Clone the Github repository to a desired location on your computer. You will need [git](https://git-scm.com/) to be preinstalled on your machine. Once the repository is cloned, you will then ```cd``` into the local repository.
