@@ -111,6 +111,14 @@ function getTicketsAPI(config, tickets) {
       console.log(`Date: ${tickets[id - 1].date}`);
       console.log(`Status: ${tickets[id - 1].status}`);
       console.log(`<------------------------------------>`);
+      return Promise.resolve();
+    })
+    .then(() => {
+      console.log("THANK YOU FOR VIEWING THE TICKETS");
+      console.log(
+        "IF YOU WANT TO VIEW THE TICKETS AGAIN, type 'run' and hit enter"
+      );
+      return Promise.resolve();
     })
     .catch(function (error) {
       console.log(error);
