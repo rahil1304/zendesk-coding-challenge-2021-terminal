@@ -67,10 +67,10 @@ function createNewTickets(allTickets) {
 }
 
 function getTicketsAPI(config, tickets) {
+  let paginationIndex = 0;
   displayGreetingMessage();
   axios(config)
     .then(function (response) {
-      let paginationIndex = 0;
       if (!response) {
         return Promise.reject(
           "The Zendesk API is currently unavailable, please check again later."
@@ -89,14 +89,14 @@ function getTicketsAPI(config, tickets) {
         console.log(`You are now viewing ${paginationIndex}`);
       }
       allTickets = response.data.tickets;
-      allTickets = allTickets.slice(
+      paginatedTickets = allTickets.slice(
         paginationIndex * 25,
         paginationIndex * 25 + 25
       );
-      return Promise.resolve(allTickets);
+      return Promise.resolve(paginatedTickets);
     })
-    .then((allTickets) => {
-      allTickets = createNewTickets(allTickets);
+    .then((paginatedTickets) => {
+      paginatedTickets = createNewTickets(paginatedTickets);
       console.table(tickets);
       return Promise.resolve(tickets);
     })
@@ -106,10 +106,10 @@ function getTicketsAPI(config, tickets) {
       );
       console.log(`<------------------------------------>`);
       console.log(`These are the details of Ticket ${id}!`);
-      console.log(`Subject: ${tickets[id - 1].subject}`);
-      console.log(`Description: ${tickets[id - 1].description}`);
-      console.log(`Date: ${tickets[id - 1].date}`);
-      console.log(`Status: ${tickets[id - 1].status}`);
+      console.log(`Subject: ${allTickets[id - 1].subject}`);
+      console.log(`Description: ${allTickets[id - 1].description}`);
+      console.log(`Date: ${allTickets[id - 1].date}`);
+      console.log(`Status: ${allTickets[id - 1].status}`);
       console.log(`<------------------------------------>`);
       return Promise.resolve();
     })
