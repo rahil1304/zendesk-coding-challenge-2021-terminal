@@ -7,6 +7,7 @@ const _ = require("underscore");
 const chalk = require("chalk");
 const boxen = require("boxen");
 const moment = require("moment");
+const prompt = require("prompt-sync")();
 
 const { messageGreeting } = require("./greeting.js");
 
@@ -40,6 +41,31 @@ function displayGreetingMessage() {
   console.log(messageGreeting);
 }
 
+function createNewTickets(allTickets) {
+  // Ticket object to create each new individual ticket
+  function Ticket(id, subject, description, date, status) {
+    this.id = id;
+    this.subject = subject;
+    this.description = description;
+    this.date = date;
+    this.status = status;
+  }
+
+  _.each(allTickets, function (ticket) {
+    //   console.log(ticket);
+    tickets.push(
+      new Ticket(
+        ticket.id,
+        ticket.subject,
+        ticket.description.substring(0, 20),
+        moment(ticket.created_at).format("DD MMM YYYY"),
+        ticket.status
+      )
+    );
+  });
+  return allTickets;
+}
+
 function getTicketsAPI(config, tickets) {
   displayGreetingMessage();
   axios(config)
@@ -57,8 +83,6 @@ function getTicketsAPI(config, tickets) {
       if (response.data.tickets.length >= 25) {
         console.log(`Only 25 tickets can be displayed on the screen!`);
 
-        const prompt = require("prompt-sync")();
-
         paginationIndex = prompt(
           "Please enter the page of the tickets you would like to visit: "
         );
@@ -72,27 +96,7 @@ function getTicketsAPI(config, tickets) {
       return Promise.resolve(allTickets);
     })
     .then((allTickets) => {
-      // Ticket object to create each new individual ticket
-      function Ticket(id, subject, description, date, status) {
-        this.id = id;
-        this.subject = subject;
-        this.description = description;
-        this.date = date;
-        this.status = status;
-      }
-
-      _.each(allTickets, function (ticket) {
-        //   console.log(ticket);
-        tickets.push(
-          new Ticket(
-            ticket.id,
-            ticket.subject,
-            ticket.description.substring(0, 20),
-            moment(ticket.created_at).format("DD MMM YYYY"),
-            ticket.status
-          )
-        );
-      });
+      allTickets = createNewTickets(allTickets);
       console.table(tickets);
       return Promise.resolve(tickets);
     })
@@ -124,4 +128,4 @@ function getTicketsAPI(config, tickets) {
 
 getTicketsAPI(config, tickets);
 
-module.exports = { getTicketsAPI };
+module.exports = { createNewTickets, getTicketsAPI, config };
