@@ -6,13 +6,6 @@
   "scripts": {
     "test": "jest"
   },
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "json",
-      "html"
-    ]
-  },
   "bin": {
     "run": "./bin/index.js"
   },

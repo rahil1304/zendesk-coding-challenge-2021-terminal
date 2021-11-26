@@ -101,25 +101,16 @@ function getTicketsAPI(config, tickets) {
       return Promise.resolve(tickets);
     })
     .then((tickets) => {
-      const readline = require("readline").createInterface({
-        input: process.stdin,
-        output: process.stdout,
-      });
-
-      readline.question(
-        `Please enter the id of the ticket you want to view in detail: `,
-        (id) => {
-          console.log(`<------------------------------------>`);
-          console.log(`These are the details of Ticket ${id}!`);
-          console.log(`Subject: ${tickets[id - 1].subject}`);
-          console.log(`Description: ${tickets[id - 1].description}`);
-          console.log(`Date: ${tickets[id - 1].date}`);
-          console.log(`Status: ${tickets[id - 1].status}`);
-          console.log(`<------------------------------------>`);
-          // console.log(`Subject: ${tickets[id - 1].subject}`);
-          readline.close();
-        }
+      id = prompt(
+        `Please enter the id of the ticket you want to view in detail: `
       );
+      console.log(`<------------------------------------>`);
+      console.log(`These are the details of Ticket ${id}!`);
+      console.log(`Subject: ${tickets[id - 1].subject}`);
+      console.log(`Description: ${tickets[id - 1].description}`);
+      console.log(`Date: ${tickets[id - 1].date}`);
+      console.log(`Status: ${tickets[id - 1].status}`);
+      console.log(`<------------------------------------>`);
     })
     .catch(function (error) {
       console.log(error);
