@@ -4,6 +4,9 @@
 ![GitHub](https://img.shields.io/github/license/rahil1304/cheaper)
 ![Github](https://img.shields.io/badge/language-JavaScript-blue.svg)
 
+## :bulb: Working Implementation
+
+<p align="center"><img width="700" src="./assets/zendeskChallenge.gif"></p>
 
 ## :rocket: Installation
 1. Clone the Github repository to a desired location on your computer. You will need [git](https://git-scm.com/) to be preinstalled on your machine. Once the repository is cloned, you will then ```cd``` into the local repository.
@@ -20,8 +23,6 @@ npm install
 ```
 node .
 ```
-
-<p align="center"><img width="700" src="./assets/zendeskChallenge.gif"></p>
 
 ## :email: Support
 For any queries and help, please reach out to me at rhsarvai@ncsu.edu or rahil1304@gmail.com
