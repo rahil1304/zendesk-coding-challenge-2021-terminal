@@ -63,21 +63,6 @@ function getTicketsAPI(config, tickets) {
           "Please enter the page of the tickets you would like to visit: "
         );
         console.log(`You are now viewing ${paginationIndex}`);
-
-        //   const readline = require("readline").createInterface({
-        //     input: process.stdin,
-        //     output: process.stdout,
-        //   });
-
-        //   readline.question(
-        //     `Please enter the page of the tickets you would like to visit:`,
-        //     (index) => {
-        //       paginationIndex = index;
-        //       inputEntered = true;
-        //       console.log("Thank you for your input!");
-        //       readline.close();
-        //     }
-        //   );
       }
       allTickets = response.data.tickets;
       allTickets = allTickets.slice(
