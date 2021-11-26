@@ -11,6 +11,8 @@ const boxenOptions = {
 };
 const messageGreeting = boxen(greeting, boxenOptions);
 
-// console.log(messageGreeting);
+function displayGreeting() {
+  return greeting;
+}
 
-module.exports = { messageGreeting };
+module.exports = { messageGreeting, displayGreeting };
