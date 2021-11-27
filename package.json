@@ -9,6 +9,7 @@
   "bin": {
     "run": "./bin/index.js"
   },
+  "lint": "eslint",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rahil1304/zendesk-coding-challenge-2021-terminal.git"
