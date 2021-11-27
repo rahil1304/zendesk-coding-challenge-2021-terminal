@@ -13,20 +13,6 @@ const { messageGreeting } = require("./greeting.js");
 
 dotenv.config();
 
-// const options = yargs
-//   .usage("Usage: -n <name>")
-//   .option("n", {
-//     alias: "name",
-//     describe: "Your name",
-//     type: "string",
-//     demandOption: true,
-//   })
-//   .option("s", {
-//     alias: "search",
-//     describe: "Search term",
-//     type: "string",
-//   }).argv;
-
 let config = {
   method: "get",
   url: "https://zccstudentsnov2021.zendesk.com/api/v2/tickets.json",
@@ -62,7 +48,6 @@ function createNewTickets(allTickets) {
   }
 
   _.each(allTickets, function (ticket) {
-    //   console.log(ticket);
     tickets.push(
       new Ticket(
         ticket.id,
