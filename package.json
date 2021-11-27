@@ -4,12 +4,12 @@
   "description": "",
   "main": "bin/index.js",
   "scripts": {
-    "test": "jest --forceExit"
+    "test": "jest --forceExit",
+    "lint": "eslint"
   },
   "bin": {
     "run": "./bin/index.js"
   },
-  "lint": "eslint",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rahil1304/zendesk-coding-challenge-2021-terminal.git"
