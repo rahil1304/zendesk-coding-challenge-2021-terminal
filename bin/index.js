@@ -35,6 +35,16 @@ var config = {
     Cookie: process.env.COOKIE,
   },
 };
+
+var configFetchEachTicket = {
+  method: "get",
+  // url: `https://zccstudentsnov2021.zendesk.com/api/v2/tickets/${id}.json`,
+  headers: {
+    Authorization: process.env.AUTHORIZATION,
+    Cookie: process.env.COOKIE,
+  },
+};
+
 let tickets = [];
 
 function displayGreetingMessage() {
@@ -104,14 +114,17 @@ function getTicketsAPI(config, tickets) {
       id = prompt(
         `Please enter the id of the ticket you want to view in detail: `
       );
+      configFetchEachTicket.url = `https://zccstudentsnov2021.zendesk.com/api/v2/tickets/${id}.json`;
+      return axios(configFetchEachTicket);
+    })
+    .then((response) => {
+      let ticket = response.data.ticket;
       console.log(`<------------------------------------>`);
-      console.log(`These are the details of Ticket ${id}!`);
-      console.log(`Subject: ${allTickets[id - 1].subject}`);
-      console.log(`Description: ${allTickets[id - 1].description}`);
-      console.log(
-        `Date: ${moment(allTickets[id - 1].created_at).format("DD MMM YYYY")}`
-      );
-      console.log(`Status: ${allTickets[id - 1].status}`);
+      console.log(`These are the details of Ticket ${ticket.id}!`);
+      console.log(`Subject: ${ticket.subject}`);
+      console.log(`Description: ${ticket.description}`);
+      console.log(`Date: ${moment(ticket.created_at).format("DD MMM YYYY")}`);
+      console.log(`Status: ${ticket.status}`);
       console.log(`<------------------------------------>`);
       return Promise.resolve();
     })
