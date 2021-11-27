@@ -5,7 +5,9 @@
   "main": "bin/index.js",
   "scripts": {
     "test": "jest --forceExit",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:coverage": "npm test -- --coverage",
+    "test:badges": "npm run test:coverage  && jest-coverage-badges"
   },
   "bin": {
     "run": "./bin/index.js"
@@ -19,12 +21,20 @@
   "bugs": {
     "url": "https://github.com/rahil1304/zendesk-coding-challenge-2021-terminal/issues"
   },
+  "jest": {
+    "coverageReporters": [
+      "json-summary",
+      "text",
+      "lcov"
+    ]
+  },
   "homepage": "https://github.com/rahil1304/zendesk-coding-challenge-2021-terminal#readme",
   "dependencies": {
     "axios": "^0.24.0",
     "boxen": "4.0",
     "chalk": "2.4",
     "dotenv": "^10.0.0",
+    "jest-coverage-badges": "^1.1.2",
     "moment": "^2.29.1",
     "prompt-sync": "^4.2.0",
     "underscore": "^1.13.1",
