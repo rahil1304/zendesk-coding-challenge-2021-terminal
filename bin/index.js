@@ -27,7 +27,7 @@ dotenv.config();
 //     type: "string",
 //   }).argv;
 
-var config = {
+let config = {
   method: "get",
   url: "https://zccstudentsnov2021.zendesk.com/api/v2/tickets.json",
   headers: {
@@ -36,7 +36,7 @@ var config = {
   },
 };
 
-var configFetchEachTicket = {
+let configFetchEachTicket = {
   method: "get",
   // url: `https://zccstudentsnov2021.zendesk.com/api/v2/tickets/${id}.json`,
   headers: {
@@ -67,7 +67,7 @@ function createNewTickets(allTickets) {
       new Ticket(
         ticket.id,
         ticket.subject,
-        ticket.description.substring(0, 20),
+        ticket.description?.substring(0, 20),
         moment(ticket.created_at).format("DD MMM YYYY"),
         ticket.status
       )
