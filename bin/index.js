@@ -79,6 +79,8 @@ function createNewTickets(allTickets) {
 function getTicketsAPI(config, tickets) {
   let paginationIndex = 0;
   displayGreetingMessage();
+
+  // API call to GET all tickets
   axios(config)
     .then(function (response) {
       if (!response) {
@@ -114,6 +116,8 @@ function getTicketsAPI(config, tickets) {
       id = prompt(
         `Please enter the id of the ticket you want to view in detail: `
       );
+
+      // API call to GET ticket from id
       configFetchEachTicket.url = `https://zccstudentsnov2021.zendesk.com/api/v2/tickets/${id}.json`;
       return axios(configFetchEachTicket);
     })
