@@ -3,7 +3,7 @@
 <!-- Change url to  ttps://img.shields.io/github/license/rahil1304/zendesk-coding-challenge-2021-terminal-->
 ![GitHub](https://img.shields.io/github/license/rahil1304/cheaper)
 ![Github](https://img.shields.io/badge/language-JavaScript-blue.svg)
-![Coverage Badge](https://img.shields.io/coverage?url=https://gist.githubusercontent.com/rahil1304/1fb82f00484e63a6619a1616285d7b23/raw/zendesk-coding-challenge-2021-terminal__pull_##.json)
+![Coverage Badge](https://img.shields.io/coverage?url=https://gist.githubusercontent.com/rahil1304/1fb82f00484e63a6619a1616285d7b23/raw/zendesk-coding-challenge-2021-terminal__heads_main.json)
 
 ## :bulb: Working Implementation
 
