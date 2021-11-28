@@ -25,5 +25,41 @@ npm install
 node .
 ```
 
+## :pen: Usage
+
+<b>Step 1: </b> Run the application using the below command
+```
+node .
+```
+
+<b>Step 2: </b>  If there are lesser than 25 tickets, all will be displayed. If there are more than 25 tickets, you will be asked to enter the page of the tickets you would like to visit.
+```
+There are a total of 100 tickets
+Only 25 tickets can be displayed on the screen!
+Please enter the page of the tickets you would like to visit: 2
+```
+
+<b>Step 3: </b>  Now all the tickets will be displayed. Enter the ID of the ticket you want to view.
+```
+Please enter the id of the ticket you want to view in detail: 54
+```
+
+<b>Step 4: </b> This will display the details of ticket 54.
+```
+<------------------------------------>
+These are the details of Ticket 54!
+Subject: esse ut qui do aute
+Description: Ad sint consequat veniam consequat ipsum aliqua deserunt incididunt tempor do pariatur nisi. Qui minim in mollit laborum non qui consequat elit incididunt duis minim non ipsum. Laboris consequat nostrud occaecat ad sint anim commodo consequat aute adipisicing. Nisi cupidatat in et quis laboris officia aute veniam aliquip exercitation pariatur. Minim qui velit aliqua Lorem laboris magna consectetur excepteur. Exercitation quis et velit aliqua irure velit quis id consectetur quis. Consectetur incididunt laborum culpa et labore et ullamco nisi.
+
+Eu quis dolor deserunt exercitation qui tempor Lorem reprehenderit eiusmod voluptate in dolore anim aute. Ad tempor elit reprehenderit qui eiusmod est est enim in ut nulla eiusmod laborum elit. Laborum velit aliqua do deserunt incididunt cupidatat deserunt elit Lorem sunt quis adipisicing. Veniam velit nulla exercitation eiusmod voluptate nostrud et ex voluptate. Ex ipsum dolore proident est quis. Sint esse officia mollit consequat commodo sunt labore ut ex velit anim aliquip minim incididunt.
+Date: 23 Nov 2021
+Status: open
+<------------------------------------>
+THANK YOU FOR VIEWING THE TICKETS
+IF YOU WANT TO VIEW THE TICKETS AGAIN, type 'run' and hit enter
+```
+
+<b>Step 5: </b> If you want to view the tickets again, type ```'node .'``` or ```run``` and hit enter.
+
 ## :email: Support
 For any queries and help, please reach out to me at rhsarvai@ncsu.edu or rahil1304@gmail.com
