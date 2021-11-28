@@ -61,5 +61,5 @@ IF YOU WANT TO VIEW THE TICKETS AGAIN, type 'run' and hit enter
 
 <b>Step 5: </b> If you want to view the tickets again, type ```'node .'``` or ```run``` and hit enter.
 
-## :email: Support
+## :mailbox_with_mail: Support
 For any queries and help, please reach out to me at rhsarvai@ncsu.edu or rahil1304@gmail.com
