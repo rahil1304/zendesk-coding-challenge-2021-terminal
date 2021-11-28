@@ -3,6 +3,7 @@
 <!-- Change url to  ttps://img.shields.io/github/license/rahil1304/zendesk-coding-challenge-2021-terminal-->
 ![GitHub](https://img.shields.io/github/license/rahil1304/cheaper)
 ![Github](https://img.shields.io/badge/language-JavaScript-blue.svg)
+[![DOI](https://zenodo.org/badge/430964893.svg)](https://zenodo.org/badge/latestdoi/430964893)
 <img src = "./coverage/badge-lines.svg">
 
 ## :bulb: Working Implementation
